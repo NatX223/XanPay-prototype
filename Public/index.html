@@ -23,11 +23,24 @@
             <br><br>
             <i>Select a stable coin:</i>
             <select name="coins" id="coins">
-                <option value="usdt address">USDT</option>
-                <option value="usdc address">USDC</option>
-                <option value="busd address">BUSD</option>
+                <option>USDT</option>
+                <option>USDC</option>
+                <option>BUSD</option>
             </select> <br><br>
+            <i>Choose Network</i>
+            <select name="network" id="network">
+                <option>Ethereum</option>
+                <option>Polygon</option>
+                <option>Binance chain</option>
+            </select> <br><br>
+            <i>Try on a testnet</i>
+            <select name="testnet" id="testnet">
+                <option>georli</option>
+                <option>mumbai</option>
+                <option>BSC testnet</option>
+            </select>
             <button id="generate" class="btn btn-primary">Generate Payment Link</button>
+            <button id="test generate" class="btn btn-primary">Generate Testnet Link</button>
             <div id="confirmation"></div>
         </div>
         <script type="module" src="../Logic/CreateInvoice.js"></script>

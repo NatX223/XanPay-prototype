@@ -22,6 +22,9 @@ var requesterAddress;
 var amount;
 var coinAddress;
 var coinName;
+var networkId;
+var networkName;
+var networkType;
 
 // function to connect wallet using the Ethers.js library
 async function connectWallet() {
@@ -35,6 +38,8 @@ async function connectWallet() {
 
     await getDetails();
 }
+
+// create function to switch to correct network
 
 // function to get invoice details
 async function getDetails() {
@@ -56,6 +61,10 @@ async function getDetails() {
     amount = invoiceDetailsSnap.data().amount;
     coinAddress = invoiceDetailsSnap.data().coinAddress;
     coinName = invoiceDetailsSnap.data().coinName;
+    networkId = invoiceDetailsSnap.data().networkId;
+    networkName = invoiceDetailsSnap.data().networkName;
+    networkType = invoiceDetailsSnap.data().networkType;
+
 
     // multiply amount by 10**6 || convert amount using ethers
     sendAmount = amount * (10 ** 6);
@@ -64,7 +73,7 @@ async function getDetails() {
     let htmlstring = `
     <div>
         <i>
-        Pay Xan of ${amount} ${coinName} to ${requesterAddress}
+        Pay Xan of ${amount} ${coinName} to ${requesterAddress} on ${networkName}
         </i>
     </div> 
     `;
